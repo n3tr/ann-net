@@ -12,5 +12,13 @@ module.exports = {
         // see https://github.com/smooth-code/svgr for a list of all options
       },
     },
+    {
+      resolve: `gatsby-plugin-google-fonts`,
+      options: {
+        fonts: [
+          `Kanit\:200 ,200i`
+        ]
+      }
+    }
   ],
 }

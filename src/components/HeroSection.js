@@ -1,6 +1,7 @@
 import React from 'react'
 import styled from 'react-emotion'
 import logoUrl from './images/Logo.svg'
+import { Link } from 'react-scroll'
 
 const Wrapper = styled('section')`
   background: #fff;
@@ -14,6 +15,8 @@ const Wrapper = styled('section')`
 
 const LogoBox = styled('div')`
   position: relative;
+  display: flex;
+  flex-direction: column;
 `
 
 const LogoImg = styled('img')`
@@ -21,16 +24,34 @@ const LogoImg = styled('img')`
   opacity: 0.8;
 `
 
+const Navigator = styled('div')`
+margin-top: 40px;
+  text-align: center;
+`
 
+const MenuLink = styled('a')`
+  text-decoration: none;
+  font-size: 1.6em;
+  color: #d2b0c6;
+
+  &:hover {
+    color: #debcd3;
+  }
+`
 
 export default class HeroSection extends React.Component {
   render() {
     return (
-    <Wrapper>
-      <LogoBox>
-        <LogoImg src={logoUrl} />
-      </LogoBox>
-    </Wrapper>
+      <Wrapper>
+        <LogoBox>
+          <LogoImg src={logoUrl} />
+          <Navigator>
+            <Link to="location" smooth={true} style={{ cursor: 'pointer' }}>
+              <MenuLink href="#">สถานที่จัดงาน</MenuLink>
+            </Link>
+          </Navigator>
+        </LogoBox>
+      </Wrapper>
     )
   }
 }
